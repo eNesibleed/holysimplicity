@@ -135,6 +135,7 @@
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #333;
+    text-align: center;
   }
   
   ul li {
@@ -258,6 +259,9 @@
     background-color: #e59400;
   }
   
+  .centrovany {
+    text-align: center;
+  }
   
   /* =====================
      OBRÁZKY / NÁHLEDY
@@ -298,6 +302,8 @@
     height: 350px;
     overflow: hidden;
     position: relative;
+    padding: 15px;
+    text-align: center;
   }
   
   .frontpage_image {
