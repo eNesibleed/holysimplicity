@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styl.css" type="text/css">
-    <link rel="shortcut icon" href="obrazky/favicon.ico">
-    <link rel="stylesheet" href="css/lightbox.min.css" type="text/css" media="screen" />
-        <script src="js/lightbox-plus-jquery.min.js"></script>
-        <script src="js/lightbox.min.js"></script>
-    <title>HOLYSIMPLICITY s.r.o.</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HOLYSIMPLICITY s.r.o.</title>
+        <link rel="shortcut icon" href="obrazky/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/styl.css" type="text/css">
+        <link rel="stylesheet" href="css/lightbox.min.css" type="text/css" media="screen">
+        <script src="js/lightbox-plus-jquery.min.js" defer></script>
+      </head>
 <body>
     <header>
         <div id="logo">
-            <h1>HOLYSIMPLICITY s.r.o.</h1>
-            <small>Zajišťujeme služby pro stavby, akce a logistiku</small>
-        </div>
+            <a href="index.html" class="logo-link">
+              <img src="obrazky/logo.png" alt="Logo HOLYSIMPLICITY" class="logo-img" />
+              <div class="logo-text">
+                <h1>HOLYSIMPLICITY s.r.o.</h1>
+                <small>Zajišťujeme služby pro stavby, akce a logistiku</small>
+              </div>
+            </a>
+          </div>
         <nav>
             <ul>
                         <li><a href="index.html">O nás</a></li>
@@ -28,17 +32,17 @@
     <main>
         <section>
             <h2>Naše reference</h2>
-            <div id="reference">
-                <a href="obrazky/beats.jpeg" title="Beats for Love" rel="lightbox[reference]">
-                    <img src="obrazky/beats_nahled.webp" alt="Beats for Love" class ="nahled"/>
+            <div class="reference-gallery">
+                <a href="obrazky/beats.jpeg" title="Beats for Love" data-lightbox="reference">
+                  <img src="obrazky/beats_nahled.webp" alt="Beats for Love" class="nahled" />
                 </a>
-                <a href="obrazky/dny_nato.jpeg" title="Dny NATO" rel="lightbox[reference]">
-                    <img src="obrazky/dny_nato_nahled.webp" alt="Dny NATO" class="nahled"/>
+                <a href="obrazky/dny_nato.jpeg" title="Dny NATO" data-lightbox="reference">
+                  <img src="obrazky/dny_nato_nahled.webp" alt="Dny NATO" class="nahled" />
                 </a>
-                <a href="obrazky/Ostrava.jpeg" title="Práce v Ostravě" rel="lightbox[reference]">
-                    <img src="obrazky/Ostrava_nahled.webp" alt="Práce v Ostravě" class ="nahled"/>
+                <a href="obrazky/Ostrava.jpeg" title="Práce v Ostravě" data-lightbox="reference">
+                  <img src="obrazky/Ostrava_nahled.webp" alt="Práce v Ostravě" class="nahled" />
                 </a>
-            </div>
+              </div>
         </section>
     </main>
     <footer>

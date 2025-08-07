@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styl.css" type="text/css">
+    <link rel="stylesheet" href="css/styl.css" type="text/css">
     <link rel="shortcut icon" href="obrazky/favicon.ico">
     <title>HOLYSIMPLICITY s.r.o.</title>
 </head>
 <body>
     <header>
         <div id="logo">
-            <h1>HOLYSIMPLICITY s.r.o.</h1>
-            <small>Zajišťujeme služby pro stavby, akce a logistiku</small>
-        </div>
+            <a href="index.html" class="logo-link">
+              <img src="obrazky/logo.png" alt="Logo HOLYSIMPLICITY" class="logo-img" />
+              <div class="logo-text">
+                <h1>HOLYSIMPLICITY s.r.o.</h1>
+                <small>Zajišťujeme služby pro stavby, akce a logistiku</small>
+              </div>
+            </a>
+          </div>
         <nav>
             <ul>
                 <li class="aktivni"><a href="index.html">O nás</a></li>
@@ -23,11 +28,15 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>O nás</h2>
+        <section class="hero-section">
+            <img src="obrazky/Holysimplicity_frontpage.png" alt="frontpage_image" class="frontpage_image" />
+        </section>
+        <section class="hero-section">
             <p>HOLYSIMPLICITY s.r.o. je mladá, flexibilní a spolehlivá firma, která se specializuje na zprostředkovatelské služby ve stavebnictví, logistické a eventové oblasti. Díky bohatým zkušenostem z praxe zvládneme i specifické zakázky rychle a efektivně. Zakládáme si na jednoduchosti, dochvilnosti a lidském přístupu.</p>
-            <p>Naše práce</p>
-            <p>Kontakt</p>
+            <div class="tlacitka-center">
+                <a href="reference.html" class="text-link">Naše práce</a>
+                <a href="kontakt.html" class="text-link">Kontakt</a>
+            </div>
         </section>
     </main>
     <footer>
@@ -37,6 +46,15 @@
         <a href="https://www.facebook.com/holysimplicitysro" target="_blank">Facebook</a> |
         <a href="https://www.instagram.com/holysimplicitysro/" target="_blank">Instagram</a>
     </div>
-    </footer>
+    </footer> 
+    <script>
+        window.addEventListener('scroll', function () {
+          const img = document.querySelector('.frontpage_image');
+          if (!img) return;
+      
+          const scrollY = window.scrollY;
+          img.style.transform = `translateY(${scrollY * 0.2}px)`;
+        });
+      </script>  
 </body>
 </html>
