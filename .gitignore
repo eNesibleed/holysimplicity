@@ -1,5 +1,5 @@
 .env
 db.sqlite3
 *.sqlite3
-holysite/settings.py
 Holysimplicity - site
+render.yaml
