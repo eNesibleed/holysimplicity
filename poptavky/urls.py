@@ -8,3 +8,5 @@ router.register(r'poptavky', PoptavkaViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+print("poptavky urls loaded")
