@@ -34,8 +34,8 @@ DEBUG = False
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["holysimplicity-backend.onrender.com"])
 
 
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -161,6 +161,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://holysimplicity.cz",
     "https://www.holysimplicity.cz",
     "https://holysimplicity-backend.onrender.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
 ]
 
 # -------------------------
