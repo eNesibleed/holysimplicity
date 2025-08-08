@@ -97,7 +97,7 @@
           const message = form.message.value;
     
           try {
-            const response = await fetch("http://127.0.0.1:8000/api/poptavky/", {
+            const response = await fetch("http://127.0.0.1:8000/api/poptavky/odeslat/", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -105,15 +105,16 @@
               body: JSON.stringify({ email, zprava: message })
             });
     
+            const data = await response.json();
+    
             if (response.ok) {
-              formMsg.textContent = "Děkujeme za zprávu. Ozveme se co nejdříve.";
+              formMsg.textContent = data.success || "Děkujeme za zprávu. Ozveme se co nejdříve.";
               formMsg.style.color = "green";
-              form.reset(); // reset formuláře
+              form.reset();
             } else {
-              formMsg.textContent = "Chyba při odesílání. Zkuste to prosím znovu.";
+              formMsg.textContent = data.error || "Chyba při odesílání. Zkuste to prosím znovu.";
               formMsg.style.color = "red";
             }
-    
           } catch (error) {
             formMsg.textContent = "Chyba při připojení k serveru.";
             formMsg.style.color = "red";
@@ -121,6 +122,6 @@
           }
         });
       });
-    </script>
+    </script>    
 </body>
 </html>

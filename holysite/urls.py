@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from poptavky.views import odeslat_poptavku
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('poptavky.urls')),
+    path('api/poptavky/odeslat/', odeslat_poptavku),
+    path('api/poptavky/', include('poptavky.urls')), 
 ]
 
