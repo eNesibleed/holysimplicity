@@ -60,22 +60,19 @@
       
             <div class="contact-form">
               <h2>Napište nám</h2>
-              <form
-                action="https://formspree.io/f/xkgzpjed"
-                method="POST"
-              >
-                <label>
-                  Váš e-mail:<br>
-                  <input type="email" name="email" required>
-                </label><br>
-                <label>
-                  Vaše zpráva:<br>
-                  <textarea name="message" rows="6" required></textarea>
-                </label><br>
-                <button type="submit">Odeslat</button>
-              </form>
+                <form id="poptavka-form">
+                  <label>
+                      Váš e-mail:<br>
+                      <input type="email" name="email" required>
+                  </label><br>
+                  <label>
+                    Vaše zpráva:<br>
+                      <textarea name="message" rows="6" required></textarea>
+                  </label><br>
+                  <button type="submit">Odeslat</button>
+                    <p id="form-msg" style="margin-top: 10px;"></p>
+                </form>
             </div>
-      
           </div>
         </section>
       </main>
@@ -88,5 +85,42 @@
         <a href="https://www.instagram.com/holysimplicitysro/" target="_blank">Instagram</a>
     </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("poptavka-form");
+        const formMsg = document.getElementById("form-msg");
+    
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+    
+          const email = form.email.value;
+          const message = form.message.value;
+    
+          try {
+            const response = await fetch("http://127.0.0.1:8000/api/poptavky/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ email, zprava: message })
+            });
+    
+            if (response.ok) {
+              formMsg.textContent = "Děkujeme za zprávu. Ozveme se co nejdříve.";
+              formMsg.style.color = "green";
+              form.reset(); // reset formuláře
+            } else {
+              formMsg.textContent = "Chyba při odesílání. Zkuste to prosím znovu.";
+              formMsg.style.color = "red";
+            }
+    
+          } catch (error) {
+            formMsg.textContent = "Chyba při připojení k serveru.";
+            formMsg.style.color = "red";
+            console.error(error);
+          }
+        });
+      });
+    </script>
 </body>
 </html>
