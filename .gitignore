@@ -1,5 +1,4 @@
 .env
 db.sqlite3
 *.sqlite3
-Holysimplicity - site
 render.yaml

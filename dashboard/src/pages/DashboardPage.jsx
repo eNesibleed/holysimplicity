@@ -8,7 +8,7 @@ export default function DashboardPage() {
     const fetchData = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/poptavky/poptavky/', {
+          const response = await axios.get('https://holysimplicity-backend.onrender.com/api/poptavky/', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
